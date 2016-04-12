@@ -1,3 +1,8 @@
+
+setopt autocd beep extendedglob nomatch
+unsetopt appendhistory notify
+bindkey -v
+
 HOST_NAME=$(hostname)
 if [ "$HOSTNAME" = "virtubsd" ] ||
    [ "$HOSTNAME" = "virtuosx" ]; then
