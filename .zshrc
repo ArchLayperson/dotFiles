@@ -4,3 +4,7 @@ if [ "$HOSTNAME" = "virtubsd" ] ||
 	alias xl="echo Try that on the HOST, this is a VM!"
 fi
 
+alias la="ls -a"
+alias ll="ls -all"
+alias lg="ls -all |grep"
+
