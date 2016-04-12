@@ -1,4 +1,4 @@
-set nocompatable  "Turn off all the compat stuff
+set nocompatible  "Turn off all the compat stuff
 
 colorscheme elflord
 
