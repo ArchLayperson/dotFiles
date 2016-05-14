@@ -13,3 +13,8 @@ alias la="ls -a"
 alias ll="ls -all"
 alias lg="ls -all |grep"
 
+if which vim >/dev/null; then
+    EDITOR=vim
+    export editor
+fi
+
