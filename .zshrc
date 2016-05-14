@@ -15,6 +15,8 @@ alias lg="ls -all |grep"
 
 if which vim >/dev/null; then
     EDITOR=vim
-    export editor
+    VISUAL=vim
+    export EDITOR
+    export VISUAL
 fi
 
