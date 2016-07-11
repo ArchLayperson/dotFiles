@@ -13,12 +13,12 @@ alias la="ls -a"
 alias ll="ls -all"
 alias lg="ls -all |grep"
 
-if which ruby >/dev/null; then
+if which ruby >/dev/null 2>&1; then
     export PATH=$(ruby -rubygems -e "puts Gem.user_dir")/bin:$PATH
 fi
 
 
-if which vim >/dev/null; then
+if which vim >/dev/null 2>&1; then
     EDITOR=vim
     VISUAL=vim
     export EDITOR
