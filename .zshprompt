@@ -1,0 +1,18 @@
+
+# [user(real)@system]$
+
+PROMPT="["
+
+if [ ! -z ${SUDO_USER} ]; then
+        PROMPT="${PROMPT}%B%U%n%u%b(${SUDO_USER}%)"
+else
+        PROMPT="${PROMPT}%n"
+fi
+
+if [ ! -z ${SSH_CONNECTION} ]; then
+        PROMPT="${PROMPT}@%m"
+fi
+
+PROMPT="${PROMPT}]%# "
+
+export PROMPT

@@ -17,6 +17,9 @@ if which ruby >/dev/null 2>&1; then
     export PATH=$(ruby -rubygems -e "puts Gem.user_dir")/bin:$PATH
 fi
 
+if which less >/dev/null 2>&1; then
+    export PAGER=less
+fi
 
 if which vim >/dev/null 2>&1; then
     EDITOR=vim
@@ -25,3 +28,4 @@ if which vim >/dev/null 2>&1; then
     export VISUAL
 fi
 
+source ~/.zshprompt
