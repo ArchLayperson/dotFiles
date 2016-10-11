@@ -1,3 +1,4 @@
+.aliases eol=lf
 .*rc text eol=lf
 .*prompt text eol=lf
 *.sh text eol=lf
