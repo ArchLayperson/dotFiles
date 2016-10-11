@@ -1,0 +1,18 @@
+#/bin/bash
+PS1="["
+
+if [ ! -z "$SUDO_USER" ]; then
+	PS1="${PS1}\u(${SUDO_USER})"
+else
+	PS1="${PS1}\u"
+fi
+
+if [ ! -z "$SSH_CONNECTION" ]; then
+	PS1="${PS1}@\h"
+fi
+
+PS1="${PS1} \W]\!\$ "
+
+
+export PS1
+
