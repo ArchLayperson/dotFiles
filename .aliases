@@ -1,1 +1,5 @@
-ll ls -all
+ls ls -F --color=auto
+ll ls -Fall
+l. ls -Fd .*
+la ls -Fa
+
