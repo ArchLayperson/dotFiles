@@ -13,6 +13,6 @@ if [ ! -z ${SSH_CONNECTION} ]; then
         PROMPT="${PROMPT}@%m"
 fi
 
-PROMPT="${PROMPT}]%!%# "
+PROMPT="${PROMPT} %3~]%!%# "
 
 export PROMPT
