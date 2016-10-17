@@ -7,18 +7,18 @@ exec 3<.aliases
         unset aliasvalue
 exec 3<&-
 
-if which less 2>&1 >&-; then
+if which less 2>&- >&-; then
 	export PAGER=less
 fi
 
-if which vim 2>&1 >&-; then
+if which vim 2>&- >&-; then
     EDITOR=vim
     VISUAL=vim
     export EDITOR
     export VISUAL
 fi
 
-if which ruby 2>&1 >&-; then
+if which ruby 2>&- >&-; then
     export PATH=$(ruby -rubygems -e "puts Gem.user_dir")/bin:$PATH
 fi
 
