@@ -1,10 +1,15 @@
 #/bin/bash
 
 exec 3<.aliases
+	while true; do
         read aliasname aliasvalue <&3 #
+	if [ ! -n "${aliasname}" ]; then
+		break
+	fi
         alias ${aliasname}="${aliasvalue}"
         unset aliasname
         unset aliasvalue
+	done
 exec 3<&-
 
 if which less 2>&- >&-; then
