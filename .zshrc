@@ -1,6 +1,10 @@
 
-setopt autocd beep extendedglob nomatch
-unsetopt appendhistory notify
+export HISTFILE=${HOME}/.zhistory
+export HISTSIZE=200
+export SAVEHIST=1000
+
+setopt autocd autopushd pushdsilent pushdtohome beep extendedglob nomatch appendhistory correct checkjobs autolist histignoredups histignorespace
+unsetopt notify
 bindkey -v
 
 HOST_NAME=$(hostname)
