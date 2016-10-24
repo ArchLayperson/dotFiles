@@ -23,6 +23,7 @@ if which vim 2>&- >&-; then
     export VISUAL
 fi
 
+<<<<<<< HEAD
 if which ruby 2>&- >&-; then
     export PATH=$(ruby -rubygems -e "puts Gem.user_dir")/bin:$PATH
 fi
