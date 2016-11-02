@@ -3,4 +3,4 @@ ll ls -Fall
 l. ls -Fd .*
 la ls -Fa
 l  ls -F
-
+winscp echo -ne "\\033]0;__ws:${PWD}\\007"
