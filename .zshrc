@@ -32,4 +32,8 @@ if which vim >/dev/null 2>&1; then
     export VISUAL
 fi
 
+if which dircolors 2>&- >&-; then
+    eval $(dircolors .dircolors)
+fi
+
 source ~/.zshprompt

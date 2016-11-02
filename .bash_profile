@@ -27,4 +27,8 @@ if which ruby 2>&- >&-; then
     export PATH=$(ruby -rubygems -e "puts Gem.user_dir")/bin:$PATH
 fi
 
+if which dircolors 2>&- >&-; then
+    eval $(dircolors .dircolors)
+fi
+
 source .bashprompt
