@@ -1,4 +1,4 @@
-ls ls -F --color=auto
+ls ls -F
 ll ls -Fall
 l. ls -Fd .*
 la ls -Fa

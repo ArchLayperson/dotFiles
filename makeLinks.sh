@@ -1,8 +1,14 @@
-#!/bin/sh
+#!/bin/bash
 scriptFile=$(readlink -f "$0")
 scriptDir=$(dirname "$scriptFile")
-ln -s $scriptDir/.zshrc $HOME/.zshrc
-ln -s $scriptDir/.vimrc $HOME/.vimrc
-ln -s $scriptDir/.xkeybindrc $HOME/.xkeybindrc
+for dotFile in $(ls -A ${scriptDir}/dotFiles); do
+	filename=$(basename ${dotFile})
+        if [ -e ${HOME%/}/${filename} ]; then
+            echo "Removeing old ${filename}"
+            unlink ${HOME%/}/${filename}
+        fi
+	echo "Linking ${HOME%/}/${filename} to ${scriptDir}/dotFiles/${dotFile}"
+	ln -s ${scriptDir}/dotFiles/${dotFile} ${HOME%/}/${filename}
+done
 
 

@@ -13,9 +13,17 @@ if [ "$HOSTNAME" = "virtubsd" ] ||
 	alias xl="echo Try that on the HOST, this is a VM!"
 fi
 
-alias la="ls -a"
-alias ll="ls -all"
-alias lg="ls -all |grep"
+exec 3<.aliases
+	while true; do
+        read aliasname aliasvalue <&3 #
+	if [ ! -n "${aliasname}" ]; then
+		break
+	fi
+        alias ${aliasname}="${aliasvalue}"
+        unset aliasname
+        unset aliasvalue
+	done
+exec 3<&-
 
 if which ruby >/dev/null 2>&1; then
     export PATH=$(ruby -rubygems -e "puts Gem.user_dir")/bin:$PATH
