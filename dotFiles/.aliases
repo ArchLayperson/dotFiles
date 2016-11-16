@@ -4,3 +4,4 @@ l. ls -Fd .*
 la ls -Fa
 l  ls -F
 winscp echo -ne "\\033]0;__ws:${PWD}\\007"
+elasticwatch watch 'curl -s localhost:9200/_cluster/health?pretty=true ;echo "" ; curl -s localhost:9200/_cat/nodes?v; echo "" ;curl -s localhost:9200/_cat/master?v'
