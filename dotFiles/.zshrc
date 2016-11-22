@@ -44,4 +44,8 @@ if which dircolors 2>&- >&-; then
     eval $(dircolors .dircolors)
 fi
 
+if [ "x$(uname)" = "xSunOS" ]; then
+	alias godmode='su abhroot -c "${SHELL} -i"'
+fi
+
 source ~/.zshprompt
