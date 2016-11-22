@@ -5,6 +5,8 @@ PROMPT="["
 
 if [ ! -z ${SUDO_USER} ]; then
         PROMPT="${PROMPT}%B%U%n%u%b(${SUDO_USER}%)"
+elif [ ! -z ${LOGNAME} ] && [ "x${LOGNAME}" != "x${USERNAME}" ]; then
+		PROMPT="${PROMPT}%B%U%n%u%b(${LOGNAME}%)"
 else
         PROMPT="${PROMPT}%n"
 fi
