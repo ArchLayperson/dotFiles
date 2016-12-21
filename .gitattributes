@@ -6,3 +6,6 @@
 *.cmd text eol=crlf
 *.bat text eol=crlf
 .dircolors text eol=lf
+.tmux.conf text eol=lf
+/dotFiles/.vim/autoload/pathogen.vim text eol=lf
+/dotFiles/.vim/bundle/** eol=lf

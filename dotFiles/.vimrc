@@ -1,5 +1,7 @@
 set nocompatible  "Turn off all the compat stuff
 
+execute pathogen#infect()
+
 colorscheme elflord
 
 "Set indeent style from filetype
