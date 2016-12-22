@@ -9,6 +9,7 @@ else
 	THIS_SCRIPT="$0:a"
 	ABH_PROFILE_DIR="$(dirname "$THIS_SCRIPT")"
 fi
+export ABH_PROFILE_DIR
 
 
 export HISTFILE=${ABH_PROFILE_DIR}/.zhistory
