@@ -63,3 +63,13 @@ if [ "x$(uname)" = "xSunOS" ]; then
 fi
 
 source ${ABH_PROFILE_DIR}/.zshprompt
+
+if [ "$(id -urn)" = "jxstory" ] || [ "$SUDO_USER" = "jxstory" ]; then
+	RPROMPT="%B%K{red}%F{black} Damnit Jody %K{reset}%F{reset}%b"
+	echo -n "Making Jody contemplate his life choices"
+	for i in $(seq 1 5); do
+		sleep 2
+		echo -n "."
+	done
+	echo ""
+fi
