@@ -12,7 +12,7 @@ fi
 export ABH_PROFILE_DIR
 
 # Run the update checker script, and if it updated, restart the shell.
-$ABH_PROFILE_DIR/.dotFiles/checkUpdate.sh && exec -l $SHELL
+$ABH_PROFILE_DIR/.dotFiles/checkUpdate.sh && exec -a "-$(basename "$SHELL")" $SHELL
 
 
 export HISTFILE=${ABH_PROFILE_DIR}/.zhistory
