@@ -1,5 +1,7 @@
 #!/bin/bash
 
+RETVAL=0
+
 # Check for dotfile updates daily, but only on login
 
 dotFilesDir="$(dirname $(realpath $0))"
@@ -13,7 +15,7 @@ lastCheckedEpoch="$(cat $checkMarkerFile)"
 currentEpoch="$(date -u +%s)"
 
 # If the cheked time is less than a day in the past, just exit
-[ $[$currentEpoch-$lastCheckedEpoch] -le 86400 ] && exit
+[ $[$currentEpoch-$lastCheckedEpoch] -le 86400 ] && exit 2
 
 echo -n "Checking for dotFile updates... " >&2
 
@@ -23,6 +25,7 @@ postUpdateHash=$(cat "$dotFilesDir/.git/refs/remotes/origin/master")
 
 if [ "$preUpdateHash" = "$postUpdateHash" ]; then
     echo "dotFiles already at latest"
+    RETVAL=1
 else 
 
 git --git-dir="$dotFilesDir/.git" --work-tree="$dotFilesDir" reset --hard origin/master 1>&- 2>&-
@@ -32,3 +35,4 @@ fi
 
 # Store the current date as the "Last Checked" time
 echo "$currentEpoch" > "$checkMarkerFile"
+exit $RETVAL
