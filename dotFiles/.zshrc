@@ -1,7 +1,7 @@
 
 
 # locate this script, and it's buddies, zsh sets $0 when sourcing but not at start-time
-if [ "x$0" = "x$ZSH_NAME" ]; then
+if [ "x${0#-}" = "x$ZSH_NAME" ]; then
 	# Invoked as part of ZSH's startup, so dir is HOME
 	ABH_PROFILE_DIR="$HOME"
 else
