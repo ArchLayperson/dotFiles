@@ -29,6 +29,7 @@ if shopt -q login_shell && haveBinary zsh; then
 	trap - INT
 	if [ "x$SWAP_TO_ZSH" == "x1" ]; then 
 		echo " Launching ZSH!"
+		export SHELL=$(which zsh)
 		exec zsh
 	fi
 	# If we are still executing at this point, we are still in bash
