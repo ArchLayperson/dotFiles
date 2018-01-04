@@ -7,3 +7,4 @@ winscp echo -ne "\\033]0;__ws:${PWD}\\007"
 elasticwatch watch 'curl -s localhost:9200/_cluster/health?pretty=true ;echo "" ; curl -s localhost:9200/_cat/nodes?v; echo "" ;curl -s localhost:9200/_cat/master?v'
 echeckindex java -cp /usr/share/elasticsearch/lib/\* -ea:org.apache.lucene... org.apache.lucene.index.CheckIndex
 zs /sbin/zfs list -o space,refer,quota,reserv,mountpoint,creation
+pat sudo /usr/local/bin/puppet agent -t
